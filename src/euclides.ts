@@ -6,7 +6,7 @@ function solution(): Number {
 
     var a: number = 10;
 
-    while(a > 0) {
+    while(a > 1) {
 
         a = a /2;
     }
