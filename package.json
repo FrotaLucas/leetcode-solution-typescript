@@ -16,5 +16,9 @@
     "url": "https://github.com/FrotaLucas/leetcode-solution-typescript/issues"
   },
   "homepage": "https://github.com/FrotaLucas/leetcode-solution-typescript#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "typescript": "^5.9.3"
+  }
 }
