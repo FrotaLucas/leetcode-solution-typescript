@@ -1,18 +1,35 @@
+import { parse } from "path";
 
 
 console.log("Hii module loaded");  
 
-function solution(): Number {
+function solution(a: number): number {
 
-    var a: number = 10;
 
-    while(a > 1) {
+    //proof
 
-        a = a /2;
+    let binaryNumber = Number(a.toString(2)); 
+    console.log(" Binary Number: " + binaryNumber);
+
+    let s: string = ""; 
+    while(a >= 1) {
+
+        var b = a%2;
+        a = Math.floor(a/2); 
+        s = b + s;
+        // console.log("new value of a: " + a + " resto: " + b);
     }
 
+    if(s[0] == "0") {
+        s = s.split(s[0])[1];
+    }
 
-    return 42;
+    const binary =  parseInt(s);
+
+
+
+    return binary;
+
 }
 
-solution();
+console.log(solution(125));    
