@@ -43,4 +43,11 @@ function countTotalZeros(binary: string): number
     return sequenceOfZeros;
 };
 
-console.log(countTotalZeros(convertToBinary(825000000)));   
+
+//convert to binary
+const step1 = convertToBinary(825000000);
+
+//count total zeros
+const step2 = countTotalZeros(step1);
+
+console.log(" Max sequence of zeros is: " + step2);
