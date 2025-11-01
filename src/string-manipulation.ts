@@ -13,7 +13,6 @@ function verifyStartAndEnd(str: string, start: string, end: string): boolean
 function verifyPadimdromo(str: string) : boolean    
 {
     let str1 : string[] = str.split("");
-
     let str2: string[] = str.split("").reverse();
 
     let index = 0;  
@@ -90,7 +89,7 @@ function findPositionOfPattern(str: string, pattern: string): number
     let index = str.indexOf(pattern);
     return index;
 }
-console.log(findPositionOfPattern("this is a test string","x"));
+// console.log(findPositionOfPattern("this is a test string","x"));
 
 
 
@@ -99,4 +98,5 @@ function verifyPattern(str: string, pattern: string): boolean
     let result : boolean = str.indexOf(pattern) == -1 ? false : true;
     return result;
 }
+
 
