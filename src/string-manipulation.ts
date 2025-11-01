@@ -82,4 +82,21 @@ function getWordStatistics(stri: string, pattern: string): [number, number]
     return [splitedStr.length,count];
 }
 
-console.log(getWordStatistics("test test2 tist3 test4 test5 test6","test"));
+// console.log(getWordStatistics("test test2 tist3 test4 test5 test6","test"));
+
+
+function findPositionOfPattern(str: string, pattern: string): number
+{
+    let index = str.indexOf(pattern);
+    return index;
+}
+console.log(findPositionOfPattern("this is a test string","x"));
+
+
+
+function verifyPattern(str: string, pattern: string): boolean
+{
+    let result : boolean = str.indexOf(pattern) == -1 ? false : true;
+    return result;
+}
+
