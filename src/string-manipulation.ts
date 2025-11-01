@@ -66,4 +66,20 @@ function varifyStrongPassword(str: string) : boolean
 
     return true;
 }
- console.log(varifyStrongPassword("test2 02333@T"));
+//  console.log(varifyStrongPassword("test2 02333@T"));
+
+function getWordStatistics(stri: string, pattern: string): [number, number]
+{
+    let splitedStr = stri.split(" ");
+
+    let count = 0;
+    for(let word of splitedStr)
+    {
+        if( word.includes(pattern))
+            count++;
+    }
+
+    return [splitedStr.length,count];
+}
+
+console.log(getWordStatistics("test test2 tist3 test4 test5 test6","test"));
