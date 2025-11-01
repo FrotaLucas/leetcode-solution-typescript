@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "execute-code": "ts-node src/rotation-of-numbers.ts"
+    "execute-code": "ts-node src/find-unpaired.ts"
   },
   "repository": {
     "type": "git",
