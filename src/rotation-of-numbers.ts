@@ -11,59 +11,55 @@
 
 // the function should return [9, 7, 6, 3, 8]. Three rotations were made:
 
+//CERTO
 function rotateArray(A: number[], K: number): number[] {
- 
+
     let result: number[] = [];
-    for(let i = 0; i < A.length; i++)
-    {
-      
-        if(K > A.length -i -1 && A.length-1 != i)
-        {   
-            var restOfMovements = K - (A.length -i -1);
+    let nextMovement = K% A.length;
+    // console.log("nextMovement", nextMovement);
 
-            console.log("i:",i , " resofMovements:", restOfMovements);
+    for (let i = 0; i < A.length; i++) {
+        var restOfMovements = A.length - i - 1;
 
-            var initialMovements = K - restOfMovements;
-            var j = initialMovements -1;
+        if (nextMovement == 0) {
+            result[i] = A[i];
+        }
+        else if (nextMovement > restOfMovements) {
+            var initialMovement = nextMovement - restOfMovements;
+            var j = initialMovement - 1;    
             result[j] = A[i];
         }
-        else if (K <= A.length -i -1){
-            // var temp = A[i + K];
-            result[i + K] = A[i];
-
+        else if (nextMovement <= restOfMovements) {
+            var j = i + nextMovement;
+            result[j] = A[i];
         }
-        else if (i == A.length -1) {
-           result[K - 1] = A[i];
-        }
-
     }
 
     return result;
 }
 
-//v2
-function rotateArrayV2(A: number[], K: number): number[] 
-{
-    let result : number[] = [];
+console.log(rotateArray([1, 2, 3, 4], 13)); // [1,2,3,4]
 
-    result = A.reduce( (agregator: number[], currentValue:number, index: number) => {
 
-        if( K > A.length - index -1)
-        {
-            var restOfMovements = A.length - index -1;
-            var initialMovements = K - restOfMovements; 
-            var j = initialMovements -1;
+//v2 ERRADO.
+function rotateArrayV2(A: number[], K: number): number[] {
+    let result: number[] = [];
+
+    result = A.reduce((agregator: number[], currentValue: number, index: number) => {
+
+        if (K > A.length - index - 1) {
+            var restOfMovements = A.length - index - 1;
+            var initialMovements = K - restOfMovements;
+            var j = initialMovements - 1;
             agregator[j] = currentValue;
         }
 
-        else if( K <= A.length - index -1 )
-        {
+        else if (K <= A.length - index - 1) {
             agregator[index + K] = currentValue;
         }
 
-        else if( index == A.length - 1) 
-        {
-            agregator[K-1 ] = currentValue;
+        else if (index == A.length - 1) {
+            agregator[K - 1] = currentValue;
         }
         return agregator;
     }, []);
@@ -71,4 +67,4 @@ function rotateArrayV2(A: number[], K: number): number[]
     return result;
 }
 
-console.log(rotateArrayV2([1, 2, 3, 4, 5], 2)); // [9,7,6,3,8]
+// console.log(rotateArrayV2([1, 2, 3, 4, 5], 2)); // [9,7,6,3,8]
