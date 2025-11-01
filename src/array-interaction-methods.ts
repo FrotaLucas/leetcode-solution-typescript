@@ -24,7 +24,7 @@ function aggregateString(): Record<string, number>
         // if( !accumulator[currentValue])
         //     accumulator[currentValue] = 0;
 
-        accumulator[currentValue] = (accumulator[currentValue] || 0)+ 1;
+        accumulator[currentValue] = (accumulator[currentValue] || 0) + 1;
         return accumulator; 
     }, {});
 

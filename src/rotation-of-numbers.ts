@@ -1,0 +1,74 @@
+// The goal is to rotate array A K times; that is, each element of A will be shifted to the right K times.
+
+// Write a function:
+// function solution(A: number[], K: number): number[];
+// that, given an array A consisting of N integers and an integer K, returns the array A rotated K times.
+
+// For example, given
+
+//     A = [3, 8, 9, 7, 6]
+//     K = 3
+
+// the function should return [9, 7, 6, 3, 8]. Three rotations were made:
+
+function rotateArray(A: number[], K: number): number[] {
+ 
+    let result: number[] = [];
+    for(let i = 0; i < A.length; i++)
+    {
+      
+        if(K > A.length -i -1 && A.length-1 != i)
+        {   
+            var restOfMovements = K - (A.length -i -1);
+
+            console.log("i:",i , " resofMovements:", restOfMovements);
+
+            var initialMovements = K - restOfMovements;
+            var j = initialMovements -1;
+            result[j] = A[i];
+        }
+        else if (K <= A.length -i -1){
+            // var temp = A[i + K];
+            result[i + K] = A[i];
+
+        }
+        else if (i == A.length -1) {
+           result[K - 1] = A[i];
+        }
+
+    }
+
+    return result;
+}
+
+//v2
+function rotateArrayV2(A: number[], K: number): number[] 
+{
+    let result : number[] = [];
+
+    result = A.reduce( (agregator: number[], currentValue:number, index: number) => {
+
+        if( K > A.length - index -1)
+        {
+            var restOfMovements = A.length - index -1;
+            var initialMovements = K - restOfMovements; 
+            var j = initialMovements -1;
+            agregator[j] = currentValue;
+        }
+
+        else if( K <= A.length - index -1 )
+        {
+            agregator[index + K] = currentValue;
+        }
+
+        else if( index == A.length - 1) 
+        {
+            agregator[K-1 ] = currentValue;
+        }
+        return agregator;
+    }, []);
+
+    return result;
+}
+
+console.log(rotateArrayV2([1, 2, 3, 4, 5], 2)); // [9,7,6,3,8]
