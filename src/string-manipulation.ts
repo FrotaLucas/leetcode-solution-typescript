@@ -28,4 +28,42 @@ function verifyPadimdromo(str: string) : boolean
     return false;   
 }
 
-console.log(verifyPadimdromo("atrrta"));   
+// console.log(verifyPadimdromo("atrrta"));   
+
+
+function varifyStrongPassword(str: string) : boolean
+{
+
+    if(!(str.length > 10))
+        return false;
+
+    //tabulacao,espaco ou quebra de linha   
+    if( str.match(/\s/)) 
+        return false;
+
+    //check lowerCase
+    if( !str.match(/[a-z]/))
+        return false;
+
+    //check UpperCase
+    if( !str.match(/[A-Z]/))
+        return false;
+
+    //check number
+    if( !str.match(/[0-9]/))
+        return false;
+
+    //check special character
+    if( !str.match(/[!@#$%^&*(),.?":{}|<>]/) )
+        return false;
+    
+    //check sequences
+    if( str.includes("123") || str.includes("abc") || str.includes("ABC"))
+        return false;
+
+    if( str.startsWith("password")  || str.endsWith("password"))
+        return false;
+
+    return true;
+}
+ console.log(varifyStrongPassword("test2 02333@T"));
