@@ -33,4 +33,23 @@ function findMissingInteget(A: number[]): number
 
 console.log(findMissingInteget([2,3,1,3]));
 
+//v2 melhor performance 
+
+
+
+function solution(A: number[]): number {
+    const n = A.length;
+    ///1 2 4 = > n= 3
+    const sum = A.reduce((accumulator:number, currentValue:number)=> {
+        accumulator +=currentValue;
+        return accumulator;
+    },0)
+
+    //1 2 3 4 => n+1
+    const upSum = (1+n+1)*(n+1)/2;
+
+    return upSum -sum;
+}
+
+
 
