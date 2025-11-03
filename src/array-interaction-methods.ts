@@ -1,3 +1,22 @@
+// ⚠️ Métodos que NAO alteram o original
+//map, filter, reduce, find
+
+// ⚠️ Métodos que alteram o original
+
+// Estes modificam o array:
+
+// push(), pop(), shift(), unshift()
+
+// splice()
+
+// sort()
+
+// reverse()
+
+// fill()
+
+
+
 //map
 const numbers: number[] = [1, 4, 9, 16];
 
