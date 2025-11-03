@@ -276,7 +276,7 @@ function minMean(A: number[]): number {
 
  
 function findFactors(S: string, P: number[], Q: number[]): number[] {
-      const n = P.length;
+    const n = P.length;
     let result : number[] = [];
 
     for(let i=0; i<n; i++)
