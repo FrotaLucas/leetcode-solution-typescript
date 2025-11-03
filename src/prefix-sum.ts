@@ -274,26 +274,26 @@ function minMean(A: number[]): number {
 // .
 
 
-function findFactors(S: string, P: number[], Q: number[]) :number[]
-{
-    const n = P.length;
+ 
+function findFactors(S: string, P: number[], Q: number[]): number[] {
+      const n = P.length;
     let result : number[] = [];
 
     for(let i=0; i<n; i++)
     {
-        var subString = S.substring(P[i],Q[i]);
+        var subString;
+        P[i] == Q[i] ? subString = S.charAt(P[i]) : subString = S.substring(P[i],Q[i]+1);
 
         if(subString.includes("A"))
             result.push(1);
         
-        if(subString.includes("C"))
+        else if(subString.includes("C"))
             result.push(2);
         
-        if(subString.includes("G"))
+        else if(subString.includes("G"))
             result.push(3);
-
         
-        if(subString.includes("T"))
+        else if(subString.includes("T"))
             result.push(4);
 
     }
@@ -302,4 +302,5 @@ function findFactors(S: string, P: number[], Q: number[]) :number[]
     return result;
 }
 
-console.log(findFactors("ACCCC",[1,1],[4,4]));
+
+console.log(findFactors("CAGC",[1,2,1,1],[3,2,3,3]));
