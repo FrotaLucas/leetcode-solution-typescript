@@ -16,7 +16,7 @@
 // N is an integer within the range [1..2,147,483,647].
 
 
-function solution(N: number): number {
+function findBinary(N: number): number {
     
 
     let totalZeros : string[] = N.toString(2).split("1");
@@ -32,4 +32,4 @@ function solution(N: number): number {
     return count;
 }
 
-console.log(solution(1041));
+console.log(findBinary(1041));
