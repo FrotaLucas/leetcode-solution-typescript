@@ -1,6 +1,8 @@
 
 
 //solution with reduce 
+// retornar o elemento que nao tem par
+
 function findUnpaired(A: number[]): number {
 
     const result = A.reduce((agregator: Record<number,number>, currentValue:number) =>
