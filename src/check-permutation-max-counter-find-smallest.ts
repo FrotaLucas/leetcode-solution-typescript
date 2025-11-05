@@ -77,7 +77,7 @@ function checkPermutation(A: number[]) : number
 //     (3, 2, 2, 4, 2)
 
 
-function solution(N: number, A: number[]): number[] {
+function solutionMaxCounter(N: number, A: number[]): number[] {
     
     let counter: number[] = new Array(N).fill(0);
 
@@ -107,7 +107,7 @@ function solution(N: number, A: number[]): number[] {
 
 // class Solution { public int solution(int[] A); }
 
-// that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
+// that, given an array A of N integers, returns the smallest missing positive integer (greater than 0) that does not occur in A.
 
 // For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
 
