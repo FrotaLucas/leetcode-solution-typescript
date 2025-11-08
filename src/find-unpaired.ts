@@ -29,7 +29,9 @@ function findUnpaired(A: number[]): number {
 function findUnpairedSimple(A: number[]): number 
 {
     //nao precisa disso
+    //self.indexOf(value) devolve o index do array A. indexOf(9) por exemplo vai ser sempre 0
     const keys = A.filter( (value, index, self) => self.indexOf(value) == index); 
+    console.log(keys);
 
     for(let item of A)
     {
@@ -42,4 +44,4 @@ function findUnpairedSimple(A: number[]): number
         
 }
 
-console.log(findUnpairedSimple([9, 3, 9, 3, 9, 0, 9]));
+console.log(findUnpairedSimple([9, 3, 9, 3, 13, 9, 0, 9]));
