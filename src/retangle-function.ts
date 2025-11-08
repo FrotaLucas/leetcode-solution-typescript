@@ -27,5 +27,7 @@ function drawRetangle(s: string) : boolean
 
 // 5 verificar tamanho dos lados 
 
-
+//duvida
 // turn[0] eh mesma coisa que turn[0][0] ?
+
+//  const [x1, y1] = turn[0];
