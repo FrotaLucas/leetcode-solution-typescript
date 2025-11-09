@@ -36,3 +36,17 @@ function drawRetangle(s: string) : boolean
 // turn[0] eh mesma coisa que turn[0][0] ?
 
 //  const [x1, y1] = turn[0];
+
+
+//training
+const tridimensionalMatrix = [[2,2,2], [2,2,3], [22,33,44]]
+
+//get 6th element
+var element = tridimensionalMatrix[1][2];
+console.log(element);
+
+//destrurturing 3th tridimensional point
+
+const [x,y,z] = tridimensionalMatrix[2];
+console.log("tridimensional point",x,y,z);
+
