@@ -5,6 +5,10 @@
 
 function drawRetangle(s: string) : boolean
 {
+    let x =0;
+    let y =0;
+
+    const points = [[x,y]]
     return false;
 }
 
@@ -44,30 +48,26 @@ const bidimensionalMatrix = [[3,3],[4,4],[7,8]];
 
 // 1 get 6th element from tridimensional and bidimensional matrix
 var element = tridimensionalMatrix[1][2];
-console.log("6th element tridimensional",element);
 
 
 var newElement = bidimensionalMatrix[2][1];
-console.log("6th element bidimensional",newElement);
 
 //2 destrurturing 3th tridimensional point
-
 const [x,y,z] = tridimensionalMatrix[2];
-console.log("tridimensional point",x,y,z);
 
 
-//sum all elements
+//3 sum all elements
 const firstSummup = tridimensionalMatrix.reduce( (sumup:number, element:number[]) => {
-    sumup = element[0] + element[1] + element[2];
+    sumup = sumup + element[0] + element[1] + element[2];
     return sumup;
 },0);
 
+const secondSummup = bidimensionalMatrix.reduce((summUp: number, elememt: number[]) => 
+{
+    summUp += elememt[0] + elememt[1];
+    return summUp;
+}, 0 );
 
-//transform in single array
-let newArray = tridimensionalMatrix.map((value:number[]) => {
-    const [x,y,z] = value;
 
-    return 
-})
-
-console.log(newArray);
+//4 transform in single array
+let flatArray = tridimensionalMatrix.flat();
