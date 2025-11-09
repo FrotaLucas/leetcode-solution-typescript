@@ -1,3 +1,8 @@
+//exercicio:
+// um string S recebe comandos de seguir em frente, ir para traz, virar a direita e
+//virar a esquerda. desenvolva uma funcao que recebe conjunto de comandos e diz
+//se os comandos vao formar um retangulo ou nao true/false
+
 function drawRetangle(s: string) : boolean
 {
     return false;
@@ -10,7 +15,7 @@ function drawRetangle(s: string) : boolean
 
 // 1 verificar o total de comandos
 // quantos comandos tem ?
-// const points : [number, number []
+// const points : [number, number] []
 
 
 // 2 armazenar todos os pontos em coordenadas e verificar 
