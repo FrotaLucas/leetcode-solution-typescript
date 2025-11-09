@@ -40,12 +40,17 @@ function drawRetangle(s: string) : boolean
 
 //training
 const tridimensionalMatrix = [[2,2,2], [2,2,3], [22,33,44]]
+const bidimensionalMatrix = [[3,3],[4,4],[7,8]];
 
-//get 6th element
+// 1 get 6th element from tridimensional and bidimensional matrix
 var element = tridimensionalMatrix[1][2];
-console.log(element);
+console.log("6th element tridimensional",element);
 
-//destrurturing 3th tridimensional point
+
+var newElement = bidimensionalMatrix[2][1];
+console.log("6th element bidimensional",newElement);
+
+//2 destrurturing 3th tridimensional point
 
 const [x,y,z] = tridimensionalMatrix[2];
 console.log("tridimensional point",x,y,z);
