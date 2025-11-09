@@ -55,3 +55,19 @@ console.log("6th element bidimensional",newElement);
 const [x,y,z] = tridimensionalMatrix[2];
 console.log("tridimensional point",x,y,z);
 
+
+//sum all elements
+const firstSummup = tridimensionalMatrix.reduce( (sumup:number, element:number[]) => {
+    sumup = element[0] + element[1] + element[2];
+    return sumup;
+},0);
+
+
+//transform in single array
+let newArray = tridimensionalMatrix.map((value:number[]) => {
+    const [x,y,z] = value;
+
+    return 
+})
+
+console.log(newArray);
