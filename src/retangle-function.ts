@@ -63,6 +63,11 @@ function drawRetangle(s: string) : boolean
             turns.push([x2,y2]);
     }
 
+    //verify 4 turn point to be retangle
+    if(turns.length != 4)
+        return false;
+
+    
     // console.log(points);
     return false;
 }
