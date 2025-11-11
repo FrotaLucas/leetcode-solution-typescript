@@ -68,11 +68,16 @@ function drawRetangle(s: string) : boolean
         return false;
 
     //verify equal lines to be retangle
-    
+    let width1 = Math.abs(turns[3][0]) - Math.abs(turns[0][0]);
+    let width2 = Math.abs(turns[2][0]) - Math.abs(turns[1][0]);
 
+    let height1 = Math.abs(turns[3][1]) - Math.abs(turns[0][1]);
+    let height2 = Math.abs(turns[2][1]) - Math.abs(turns[1][1]);
 
+    if(width1 != width2 || height1 != height2)
+        return false;
     // console.log(points);
-    return false;
+    return true;
 }
 
 drawRetangle("uurrd");
