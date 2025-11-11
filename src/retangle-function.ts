@@ -76,11 +76,11 @@ function drawRetangle(s: string) : boolean
 
     if(width1 != width2 || height1 != height2)
         return false;
-    // console.log(points);
+
     return true;
 }
 
-drawRetangle("uurrd");
+console.log(drawRetangle("uurrddll"));
 //stepe by step
 
 //retangle function
