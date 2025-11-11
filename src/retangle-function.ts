@@ -37,11 +37,33 @@ function drawRetangle(s: string) : boolean
 
     const [xf,yf] = points[points.length-1];
 
-    //verify origin of retangle
+    //verify return to origin to proof retangle
     if(xf != 0 && yf !=0)
         return false;
 
-    console.log(points);
+
+    //verify turns
+    const turns = [[0,0]];
+    for(let i=0; i<points.length-2; i++)
+    {
+        const [x1, y1] = points[i];
+        const [x2, y2] = points[i+1];
+        const [x3, y3] = points[i+2];
+
+        var dx1 = x2 -x1;
+        var dx2 = x3 -x2;
+
+        var dy1 = y2 -y1;
+        var dy2 = y3 -y1;
+
+        if(dx1 !=0 && dy2 != 0)
+            turns.push([x2,y2]);
+        
+        else(dy1 !=0 && dx2 != 0)
+            turns.push([x2,y2]);
+    }
+
+    // console.log(points);
     return false;
 }
 
