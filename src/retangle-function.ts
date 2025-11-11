@@ -5,13 +5,47 @@
 
 function drawRetangle(s: string) : boolean
 {
+    //verify total commands for retangle
+    if(s.length < 4)
+        return false;
+
     let x =0;
     let y =0;
 
-    const points = [[x,y]]
+    const points = [[x,y]];
+
+    for(let command of s)
+    {
+        switch(command)
+        {
+            case "u":
+                y++;
+                break;
+            case "d":
+                y--;
+                break;
+            case "r":
+                x++;
+                break;
+            case "l":
+                x--;
+                break;
+        }
+        points.push([x,y]);
+
+    }
+
+    const [xf,yf] = points[points.length-1];
+
+    //verify origin of retangle
+    if(xf != 0 && yf !=0)
+        return false;
+
+    console.log(points);
     return false;
 }
 
+drawRetangle("uurrd");
 //stepe by step
 
 //retangle function
