@@ -113,9 +113,10 @@ function drawRetangle(s: string) : boolean
 // console.log(drawRetangle("uurrddll"));
 
 //false
-console.log(drawRetangle("rrrllluudd"));
+// console.log(drawRetangle("rrrllluudd"));
 
-
+//true
+console.log(drawRetangle("ddlluurr"));
 
 
 //training
