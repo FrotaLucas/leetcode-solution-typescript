@@ -63,7 +63,7 @@ function drawRetangle(s: string) : boolean
         points.push([x,y]);
 
     }
-    console.log(points);
+    console.log("all points",points);
     const [xf,yf] = points[points.length-1];
 
     //verify return to origin to proof retangle
