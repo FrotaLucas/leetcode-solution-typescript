@@ -3,6 +3,35 @@
 //virar a esquerda. desenvolva uma funcao que recebe conjunto de comandos e diz
 //se os comandos vao formar um retangulo ou nao true/false
 
+//step by step - breakdown
+
+//retangle function
+// < verificações >
+
+// 1 verificar o total de comandos
+// quantos comandos tem ?
+// const points : [number, number] []
+
+
+// 2 armazenar todos os pontos em coordenadas e verificar 
+// se para no mesmo ponto de partida [0,0]
+
+// const [xf, yx] = points[points.length -1]
+
+
+// 3 verificar os vertices. ver as dimensões para descobrir se fez curva.
+
+// const turns : [number,number][] = []
+
+// 4 precisa ter no total 4 turns
+
+// 5 verificar tamanho dos lados 
+
+//duvida
+// turn[0] eh mesma coisa que turn[0][0] ?
+
+//  const [x1, y1] = turn[0];
+
 function drawRetangle(s: string) : boolean
 {
     //verify total commands for retangle
@@ -43,7 +72,6 @@ function drawRetangle(s: string) : boolean
 
 
     //verify turns
-    // console.log("points:", points);
     const turns = [[0,0]];
     for(let i=0; i<points.length-2; i++)
     {
@@ -83,35 +111,13 @@ function drawRetangle(s: string) : boolean
     return true;
 }
 
-console.log(drawRetangle("uurrdddll"));
-//stepe by step
+//true
+// console.log(drawRetangle("uurrddll"));
 
-//retangle function
-// < verificações >
-
-// 1 verificar o total de comandos
-// quantos comandos tem ?
-// const points : [number, number] []
+//false
+console.log(drawRetangle("rrrllluudd"));
 
 
-// 2 armazenar todos os pontos em coordenadas e verificar 
-// se para no mesmo ponto de partida [0,0]
-
-// const [xf, yx] = points[points.length -1]
-
-
-// 3 verificar os vertices. ver as dimensões para descobrir se fez curva.
-
-// const turns : [number,number][] = []
-
-// 4 precisa ter no total 4 turns
-
-// 5 verificar tamanho dos lados 
-
-//duvida
-// turn[0] eh mesma coisa que turn[0][0] ?
-
-//  const [x1, y1] = turn[0];
 
 
 //training
