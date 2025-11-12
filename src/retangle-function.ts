@@ -54,7 +54,7 @@ function drawRetangle(s: string) : boolean
         var dx2 = x3 -x2;
 
         var dy1 = y2 -y1;
-        var dy2 = y3 -y1;
+        var dy2 = y3 -y2;
 
         if(dx1 !=0 && dy2 != 0)
             turns.push([x2,y2]);
@@ -62,6 +62,7 @@ function drawRetangle(s: string) : boolean
         else(dy1 !=0 && dx2 != 0)
             turns.push([x2,y2]);
     }
+    console.log("total turns",turns.length)
 
     //verify 4 turn points to be retangle
     if(turns.length != 4)
