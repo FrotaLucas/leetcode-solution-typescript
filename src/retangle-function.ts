@@ -2,6 +2,8 @@
 // um string S recebe comandos de seguir em frente, ir para traz, virar a direita e
 //virar a esquerda. desenvolva uma funcao que recebe conjunto de comandos e diz
 //se os comandos vao formar um retangulo ou nao true/false
+//regras: nao tem caminho na diagonal 
+//estou considerando que o retangulo comeca sempre no ponto 0,0
 
 //step by step - breakdown
 
@@ -67,12 +69,12 @@ function drawRetangle(s: string) : boolean
     const [xf,yf] = points[points.length-1];
 
     //verify return to origin to proof retangle
-    if(xf != 0 && yf !=0)
+    if(xf != 0 || yf !=0)
         return false;
 
 
     //verify turns
-    const turns = [[0,0]];
+    const vertices = [[0,0]];
     for(let i=0; i<points.length-2; i++)
     {
         const [x1, y1] = points[i];
@@ -86,22 +88,22 @@ function drawRetangle(s: string) : boolean
         var dy2 = y3 -y2;
 
         if(dx1 !=0 && dy2 != 0)
-            turns.push([x2,y2]);
+            vertices.push([x2,y2]);
         
         else if(dy1 !=0 && dx2 != 0)
-            turns.push([x2,y2]);
+            vertices.push([x2,y2]);
     }
 
     //verify 4 turn points to be retangle
-    if(turns.length != 4)
+    if(vertices.length != 4)
         return false;
 
     //verify equal lines to be retangle
-    let width1 = Math.abs(turns[2][0] - turns[0][0]);
-    let width2 = Math.abs(turns[3][0] - turns[1][0]);
+    let width1 = Math.abs(vertices[2][0] - vertices[0][0]);
+    let width2 = Math.abs(vertices[3][0] - vertices[1][0]);
 
-    let height1 = Math.abs(turns[2][1] - turns[0][1]); 
-    let height2 = Math.abs(turns[3][1] - turns[1][1]);
+    let height1 = Math.abs(vertices[2][1] - vertices[0][1]); 
+    let height2 = Math.abs(vertices[3][1] - vertices[1][1]);
     
     if(width1 != width2 || height1 != height2)
         return false;
