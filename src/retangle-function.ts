@@ -63,7 +63,7 @@ function drawRetangle(s: string) : boolean
         points.push([x,y]);
 
     }
-
+    console.log(points);
     const [xf,yf] = points[points.length-1];
 
     //verify return to origin to proof retangle
@@ -75,7 +75,6 @@ function drawRetangle(s: string) : boolean
     const turns = [[0,0]];
     for(let i=0; i<points.length-2; i++)
     {
-        console.log("points",points[i], points[i+1], points[i+2]);
         const [x1, y1] = points[i];
         const [x2, y2] = points[i+1];
         const [x3, y3] = points[i+2];
@@ -92,7 +91,6 @@ function drawRetangle(s: string) : boolean
         else if(dy1 !=0 && dx2 != 0)
             turns.push([x2,y2]);
     }
-    console.log("turns",turns)
 
     //verify 4 turn points to be retangle
     if(turns.length != 4)
@@ -104,7 +102,7 @@ function drawRetangle(s: string) : boolean
 
     let height1 = Math.abs(turns[3][1]) - Math.abs(turns[0][1]);
     let height2 = Math.abs(turns[2][1]) - Math.abs(turns[1][1]);
-
+    
     if(width1 != width2 || height1 != height2)
         return false;
 
