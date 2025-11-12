@@ -43,9 +43,11 @@ function drawRetangle(s: string) : boolean
 
 
     //verify turns
+    // console.log("points:", points);
     const turns = [[0,0]];
     for(let i=0; i<points.length-2; i++)
     {
+        console.log("points",points[i], points[i+1], points[i+2]);
         const [x1, y1] = points[i];
         const [x2, y2] = points[i+1];
         const [x3, y3] = points[i+2];
@@ -59,10 +61,10 @@ function drawRetangle(s: string) : boolean
         if(dx1 !=0 && dy2 != 0)
             turns.push([x2,y2]);
         
-        else(dy1 !=0 && dx2 != 0)
+        else if(dy1 !=0 && dx2 != 0)
             turns.push([x2,y2]);
     }
-    console.log("total turns",turns.length)
+    console.log("turns",turns)
 
     //verify 4 turn points to be retangle
     if(turns.length != 4)
@@ -81,7 +83,7 @@ function drawRetangle(s: string) : boolean
     return true;
 }
 
-console.log(drawRetangle("uurrddll"));
+console.log(drawRetangle("uurrdddll"));
 //stepe by step
 
 //retangle function
