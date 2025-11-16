@@ -1,12 +1,12 @@
 
-function printTree()
+function printTree(height: number)
 {
     console.log("Merry Christmas Tree!");
 
     let tree : string = "";
     let line: string = "";
 
-    for(let i=0; i<10; i++)
+    for(let i=0; i<height; i++)
     {
         for(let j = 0; j <=i; j++)
         {
@@ -44,4 +44,4 @@ function printTree()
     console.log(newTree);
 }
 
-printTree();
+printTree(10);
